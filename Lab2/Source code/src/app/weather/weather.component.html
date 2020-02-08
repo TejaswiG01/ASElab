@@ -1,0 +1,89 @@
+<div class="container" >
+  <div [formGroup]="weatherSearchForm">
+    <div class="row">
+      <div class="col-lg-6"><h2 class="text-center my-4"><dt>Weather & Forecast:</dt></h2>
+
+      <div class="form-group">
+        <input
+          class="input-sm form-control"
+          type="text"
+          id="weatherLocation"
+          aria-describedby="weatherLocation"
+          placeholder="Please Enter City Name:"
+          formControlName="city" />
+      </div>
+       <div style="text-align: center;"> Or </div>
+      <div class="form-group">
+        <input
+          class="form-control"
+          type="text"
+          id="weatherCode"
+          aria-describedby="weatherCode"
+          formControlName="countryCd"
+          placeholder="Please Enter Country Code:"/>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-success btn-md" (click)="onClick()">
+          Search </button>
+      </div>
+
+
+  </div>
+      <div class="col-lg-6"><h3 class="text-center my-4"><dt>Current Weather Details:</dt></h3>
+        <p class="bg-light text-muted"style="text-align: center">Weather condition: {{this.weatherData?.weather[0].description}}</p>
+      <p class="bg-light text-danger" style="text-align: center">Temperature: {{this.weatherData?.main.temp}} F</p>
+      <p class="bg-light text-success"style="text-align: center">Feels-like: {{this.weatherData?.main.feels_like}} F</p>
+      <p class="bg-light text-primary"style="text-align: center">Wind Speed: {{this.weatherData?.wind.speed}} mph</p>
+      <p class="bg-light text-warning"style="text-align: center">Pressure: {{this.weatherData?.main.pressure}} mbar</p>
+      <p class="bg-light text-info"style="text-align: center">Humidity: {{this.weatherData?.main.humidity}} %</p>
+      </div>
+
+      <div class="col-lg-12"><h3 class="text-center my-4"><dt>Hourly Forecast Details:</dt></h3>
+        <div class="row">
+          <div class="col">
+            <div class="card bg-light">
+        <p class="text-success"style="text-align: center">Date & Time: {{this.weatherForecastData?.list[0].dt_txt}}</p>
+        <p class="text-danger" style="text-align: center">Temperature: {{this.weatherForecastData?.list[0].main.temp}} F</p>
+        <p class="text-muted"style="text-align:center">Condition: {{this.weatherForecastData?.list[0].weather[0].description}}</p>
+        <p class="text-info"style="text-align: center">Humidity: {{this.weatherForecastData?.list[0].main.humidity}} %</p>
+          </div>
+        </div>
+          <div class="col">
+            <div class="card bg-light">
+        <p class="text-success"style="text-align: center">Date & Time: {{this.weatherForecastData?.list[1].dt_txt}}</p>
+        <p class="text-danger" style="text-align: center">Temperature: {{this.weatherForecastData?.list[1].main.temp}} F</p>
+        <p class="text-muted"style="text-align:center">Condition: {{this.weatherForecastData?.list[1].weather[0].description}}</p>
+        <p class="text-info"style="text-align: center">Humidity: {{this.weatherForecastData?.list[1].main.humidity}} %</p>
+          </div>
+          </div>
+          <div class="col">
+            <div class="card bg-light">
+        <p class="text-success"style="text-align: center">Date & Time: {{this.weatherForecastData?.list[2].dt_txt}}</p>
+        <p class="text-danger" style="text-align: center">Temperature: {{this.weatherForecastData?.list[2].main.temp}} F</p>
+        <p class="text-muted"style="text-align:center">Condition: {{this.weatherForecastData?.list[2].weather[0].description}}</p>
+        <p class="text-info"style="text-align: center">Humidity: {{this.weatherForecastData?.list[2].main.humidity}} %</p>
+          </div>
+          </div>
+
+          <div class="col">
+          <div class="card bg-light">
+        <p class="text-success"style="text-align: center">Date & Time: {{this.weatherForecastData?.list[3].dt_txt}}</p>
+        <p class="text-danger" style="text-align: center">Temperature: {{this.weatherForecastData?.list[3].main.temp}} F</p>
+        <p class="text-muted"style="text-align:center">Condition: {{this.weatherForecastData?.list[3].weather[0].description}}</p>
+            <p class="text-info"style="text-align: center">Humidity: {{this.weatherForecastData?.list[3].main.humidity}} %</p>
+          </div>
+      </div>
+          <div class="col">
+            <div class="card bg-light">
+            <p class="text-success"style="text-align: center">Date & Time: {{this.weatherForecastData?.list[4].dt_txt}}</p>
+        <p class="text-danger" style="text-align: center">Temperature: {{this.weatherForecastData?.list[4].main.temp}} F</p>
+        <p class="text-muted"style="text-align:center">Condition: {{this.weatherForecastData?.list[4].weather[0].description}}</p>
+        <p class="text-info"style="text-align: center">Humidity: {{this.weatherForecastData?.list[4].main.humidity}} %</p>
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
