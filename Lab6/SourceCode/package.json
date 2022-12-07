@@ -9,7 +9,7 @@
   "author": "tejaswi",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "file-system": "^2.2.2",
     "save": "^2.4.0",
     "lodash": "^4.17.15",
